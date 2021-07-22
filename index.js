@@ -127,9 +127,9 @@ client.on('message', message => {
 		};
 		
 	}
-	else if (command === 'emojis') {
+	else if (command === 'roles') {
 		try {
-			client.commands.get('emojis').execute(message, args, Discord, client);
+			client.commands.get('roles').execute(message, args, Discord, client);
 		} catch (error) {
 			client.channels.cache.get(errorChannel).send(`<@!473214825833431051> there was an error when calling !emojis: ` + error);
 		};
