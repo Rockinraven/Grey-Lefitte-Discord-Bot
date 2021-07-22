@@ -1,9 +1,10 @@
 module.exports = {
-	name: 'emojis',
+	name: 'roles',
 	description: 'creates the messages for assigning roles',
 	async execute(message,args,Discord,client){
-		const channel = '837709993796173845';	//roles channel
-		
+		const channel = '837709993796173845';	//roles channedb.set("key", "value").then(() => {});l
+    const Database = require("@replit/database")
+    const db = new Database(process.env.REPLIT_DB_URL)
 		//all of the roles available to choose
 		const writer = message.guild.roles.cache.find(role => role.name === "Writer");
 		const artist = message.guild.roles.cache.find(role => role.name === "Artist");
@@ -27,7 +28,7 @@ module.exports = {
 		messageEmbed.react(writerEmoji);
 		messageEmbed.react(artistEmoji);
 		messageEmbed.react(techieEmoji);
-
+    // db.set("reactionRolesMsgID", myMessage.id)     //keep track of the most recent reaction message generated
 
 		// //when a reaction is added
 		// client.on('messageReactionAdd', async (reaction, user) => {

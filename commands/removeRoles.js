@@ -3,7 +3,8 @@ module.exports = {
 	description: 'removes roles from users when they un-react in #roles',
 	async execute(reaction, user) {
 		let reactMsg = reaction.message;
-
+    const Database = require("@replit/database")
+    const db = new Database(process.env.REPLIT_DB_URL)
 		const channel = '837709993796173845';	//roles channel
 
 		//emojis :art: :computer: and :pencil:

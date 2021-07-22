@@ -1,5 +1,8 @@
 const Discord = require('discord.js');
-const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]});  	//partials are for reaction roles
+const client = new Discord.Client({partials: ["MESSAGE", "CHANNEL", "REACTION"]});  	//partials are for reaction roles 
+const Database = require("@replit/database")
+const db = new Database()
+const keepAlive = require("./server")
 const prefix = '!';
 const fs = require('fs');
 const errorChannel = '838118417005412433';
@@ -195,6 +198,6 @@ client.on('messageReactionAdd', async (reaction, user) => {
 		// if (!attachment) return;
 		// else voteChannel.send(myAttachment);
 })
-
+keepAlive()
 //log into bot (should be last step?)
 client.login(process.env['TOKEN']);

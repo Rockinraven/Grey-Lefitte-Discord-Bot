@@ -2,7 +2,9 @@ module.exports = {
 	name: 'voteConfirm',
 	description: 'Manages moving approved images into the gallery.',
 	async execute(reaction, user, Discord, client, reactMsg) {
-		const channel = reaction.message.channel;					//inspo-vote channel
+    const Database = require("@replit/database")
+    const db = new Database(process.env.REPLIT_DB_URL)
+    const channel = reaction.message.channel;					//inspo-vote channel
 		const yesEmoji = '✅';
 		const arrowRightEmoji = '➡️';
 		const galleryChannel = '836782874287669268';
